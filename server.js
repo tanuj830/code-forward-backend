@@ -18,15 +18,11 @@ mongoose
   });
 
 app.use(
-  cors(
-    app.use(
-      cors({
-        origin: "*",
-        allowedHeaders: "X-Requested-With, Content-Type, Authorization",
-        methods: "GET, POST, PATCH, PUT, POST, DELETE, OPTIONS",
-      })
-    )
-  )
+  cors({
+    origin: "*",
+    allowedHeaders: "X-Requested-With, Content-Type, Authorization",
+    methods: "GET, POST, PATCH, PUT, POST, DELETE, OPTIONS",
+  })
 );
 
 app.use("/user", user);

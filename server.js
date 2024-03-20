@@ -16,7 +16,20 @@ mongoose
     console.log("DB connection successful");
   });
 
-app.use(cors());
+app.use(
+  cors(
+    app.use(
+      cors({
+        origin: "https://codeforward.vercell.app",
+        origin: "http://codeforward.vercell.app",
+        origin: ["https://tanujbhatt.in", "https://www.google.com/"],
+        origin: "*",
+        allowedHeaders: "X-Requested-With, Content-Type, Authorization",
+        methods: "GET, POST, PATCH, PUT, POST, DELETE, OPTIONS",
+      })
+    )
+  )
+);
 
 app.use(express.json());
 

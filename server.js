@@ -9,8 +9,8 @@ const user = require("./routes/user");
 mongoose.set("strictQuery", true);
 mongoose
   .connect(process.env.MONGO_URI, {
-    // useNewUrlParser: true,
-    // useUnifiedTopology: true,
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
   })
   .then(() => {
     console.log("DB connection successful");

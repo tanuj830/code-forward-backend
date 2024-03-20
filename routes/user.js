@@ -17,9 +17,9 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.get("/", async (req, res) => {
+router.get("/:id", async (req, res) => {
   try {
-    await UserModel.find({})
+    await UserModel.find({ _id: req.params.id }, {})
       .then((data) => res.status(201).json(data))
       .catch((err) => console.log(err));
   } catch (err) {

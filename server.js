@@ -16,15 +16,7 @@ mongoose
     console.log("DB connection successful");
   });
 
-app.use(
-  cors({
-    origin: "https://tanujbhatt.in",
-    origin: ["https://tanujbhatt.in", "https://www.google.com/"],
-    origin: "*",
-    allowedHeaders: "X-Requested-With, Content-Type, Authorization",
-    methods: "GET, POST, PATCH, PUT, POST, DELETE, OPTIONS",
-  })
-);
+app.use(cors());
 
 app.use(express.json());
 

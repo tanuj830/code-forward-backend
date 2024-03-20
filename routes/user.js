@@ -9,9 +9,8 @@ router.post("/", async (req, res) => {
       name,
       language,
     });
-    await User.save()
-      .then((data) => res.status(201).json(data))
-      .catch((err) => console.log(err));
+    const result = await User.save();
+    res.send(result).status(200);
   } catch (err) {
     res.status(401).json("Server Error");
   }

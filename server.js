@@ -27,6 +27,6 @@ app.use(
 
 app.use("/user", user);
 
-app.listen(process.env.PORT || 8000, () => {
+app.listen(process.env.PORT || 5000, () => {
   "Server connected successfully";
 });

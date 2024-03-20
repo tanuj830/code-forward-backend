@@ -5,6 +5,7 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 dotenv.config();
 const user = require("./routes/user");
+app.use(express.json());
 
 mongoose.set("strictQuery", true);
 mongoose
@@ -20,9 +21,6 @@ app.use(
   cors(
     app.use(
       cors({
-        origin: "https://codeforward.vercell.app",
-        origin: "http://codeforward.vercell.app",
-        origin: ["https://tanujbhatt.in", "https://www.google.com/"],
         origin: "*",
         allowedHeaders: "X-Requested-With, Content-Type, Authorization",
         methods: "GET, POST, PATCH, PUT, POST, DELETE, OPTIONS",
@@ -30,8 +28,6 @@ app.use(
     )
   )
 );
-
-app.use(express.json());
 
 app.use("/user", user);
 
